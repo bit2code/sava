@@ -33,4 +33,4 @@ Finally, start your Spring Boot application:
 ```bash
 mvn spring-boot:run
 ```
-## Step 4: Repeat wit other services
+## Step 4: Repeat steps with other services
