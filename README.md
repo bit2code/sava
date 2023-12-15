@@ -6,3 +6,31 @@
 
 # Get info FLOW
 ![image](https://github.com/bit2code/sava/assets/153949715/fab479a0-5116-477c-96da-071bbd64ffef)
+
+# Running the Project
+
+This document provides instructions on how to start all the services in your project. Ensure you have Maven and Spring Boot installed in your development environment.
+
+## Step 1: Navigate to Project Directory
+
+Begin by navigating to your project's root directory:
+
+```bash
+cd project-name
+```
+## Step 2: Clean and Build Project with Maven
+
+Next, clean and build your project:
+
+```bash
+mvn clean install
+```
+
+## Step 3: Start Spring Boot Application
+
+Finally, start your Spring Boot application:
+
+```bash
+mvn spring-boot:run
+```
+## Step 4: Repeat wit other services
