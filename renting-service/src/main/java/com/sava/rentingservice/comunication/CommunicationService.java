@@ -1,12 +1,13 @@
 package com.sava.rentingservice.comunication;
 
-import java.util.List;
-
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import com.sava.communicationprotocol.data.BookDTO;
+import com.sava.communicationprotocol.data.UserDTO;
 
 import lombok.RequiredArgsConstructor;
 
@@ -15,12 +16,12 @@ import lombok.RequiredArgsConstructor;
 public class CommunicationService {
     private final RestTemplate restTemplate;
 
-    public Book getBookById(String id) {
-        ResponseEntity<Book> response = restTemplate.exchange(
+    public BookDTO getBookById(String id) {
+        ResponseEntity<BookDTO> response = restTemplate.exchange(
                 RestClientConfig.BOOK_BASE_URL + "/" + id,
                 HttpMethod.GET,
                 null,
-                new ParameterizedTypeReference<Book>() {
+                new ParameterizedTypeReference<BookDTO>() {
                 });
 
         return response.getBody();
@@ -37,12 +38,12 @@ public class CommunicationService {
         return response.getBody();
     }
 
-    public User getUserId(String id) {
-        ResponseEntity<User> response = restTemplate.exchange(
+    public UserDTO getUserId(String id) {
+        ResponseEntity<UserDTO> response = restTemplate.exchange(
                 RestClientConfig.USER_BASE_URL + "/" + id,
                 HttpMethod.GET,
                 null,
-                new ParameterizedTypeReference<User>() {
+                new ParameterizedTypeReference<UserDTO>() {
                 });
 
         return response.getBody();

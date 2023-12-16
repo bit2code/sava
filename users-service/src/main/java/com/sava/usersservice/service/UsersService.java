@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.sava.communicationprotocol.data.UserDTO;
 import com.sava.usersservice.entity.User;
 import com.sava.usersservice.repository.UsersRepository;
 
@@ -18,7 +19,7 @@ public class UsersService {
         return this.usersRepository.findAll();
     }
 
-    public User getUserById(String userId) {
-        return this.usersRepository.findById(userId);
+    public UserDTO getUserDTOById(String userId) {
+        return User.toUserDTO(this.usersRepository.findById(userId));
     }
 }

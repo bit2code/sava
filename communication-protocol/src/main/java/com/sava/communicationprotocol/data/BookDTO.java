@@ -1,15 +1,16 @@
-package com.sava.rentingservice.comunication;
+package com.sava.communicationprotocol.data;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+@Builder
+public class BookDTO {
     private String id;
     private String name;
+    private int quantity;
 }

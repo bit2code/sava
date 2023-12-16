@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sava.booksservice.entity.Book;
 import com.sava.booksservice.services.BooksService;
+import com.sava.communicationprotocol.data.BookDTO;
 
 import lombok.RequiredArgsConstructor;
 
@@ -27,8 +28,8 @@ public class BooksController {
     }
 
     @GetMapping("/{bookId}")
-    public Book getBooksById(@PathVariable String bookId) {
-        return booksService.getBookById(bookId);
+    public BookDTO getBooksById(@PathVariable String bookId) {
+        return booksService.getBookDTOById(bookId);
     }
 
     @PostMapping("/create-book")

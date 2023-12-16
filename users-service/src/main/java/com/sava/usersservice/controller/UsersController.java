@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sava.communicationprotocol.data.UserDTO;
 import com.sava.usersservice.entity.User;
 import com.sava.usersservice.service.UsersService;
 
@@ -24,7 +25,7 @@ public class UsersController {
     }
 
     @GetMapping("/{userId}")
-    public User getUserById(@PathVariable String userId) {
-        return usersService.getUserById(userId);
+    public UserDTO getUserById(@PathVariable String userId) {
+        return usersService.getUserDTOById(userId);
     }
 }

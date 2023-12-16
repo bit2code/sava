@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.sava.booksservice.entity.Book;
 import com.sava.booksservice.repositories.BooksRepository;
+import com.sava.communicationprotocol.data.BookDTO;
 
 import lombok.RequiredArgsConstructor;
 
@@ -30,8 +31,8 @@ public class BooksService {
         return book;
     }
 
-    public Book getBookById(String bookId) {
-        return booksRepository.findById(bookId);
+    public BookDTO getBookDTOById(String bookId) {
+        return Book.toBookDTO(booksRepository.findById(bookId));
     }
 
     public Boolean decrease(String bookId) {

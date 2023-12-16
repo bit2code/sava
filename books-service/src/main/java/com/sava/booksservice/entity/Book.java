@@ -1,5 +1,7 @@
 package com.sava.booksservice.entity;
 
+import com.sava.communicationprotocol.data.BookDTO;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,4 +15,12 @@ public class Book {
     private String id;
     private String name;
     private int quantity;
+
+    public static BookDTO toBookDTO(Book book) {
+        return BookDTO.builder()//
+                .id(book.getId())
+                .name(book.getName())//
+                .quantity(book.getQuantity())
+                .build();
+    }
 }
